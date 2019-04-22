@@ -1,0 +1,198 @@
+﻿@model IEnumerable<BSDKhulna.Models.ProcurementAndTenderModels>
+@section Scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        })
+            window.print();
+        }
+    </script>
+
+}
+
+@{
+    ViewBag.Title = "ProcurementAndPurchase";
+}
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    #myInput {
+        background-image: url('/css/searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+    }
+
+    #myTable {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ddd;
+        font-size: 18px;
+    }
+
+        #myTable th, #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+            #myTable tr.header, #myTable tr:hover {
+                background-color: #f1f1f1;
+            }
+</style>
+@foreach (var dept in ViewBag.departmentlist)
+{
+    var i = 0;
+    <br/>
+    <fieldset>
+        <legend style="font-family:Arial, Helvetica, sans-serif;font-weight:bold;color:firebrick">@dept Items </legend>
+
+        <table id="myTable" style="font-size:small;font-family:Arial, Helvetica, sans-serif" class="myTable table-bordered">
+            <tr>
+                <th style="color:darkblue">
+                    @Html.DisplayName("Serial")
+                </th>
+                <th style="color:darkblue">
+                    @Html.DisplayName("Tender No")
+                </th>
+                <th style="color:darkblue">
+                    @Html.DisplayNameFor(model => model.ItemDescription)
+                </th>
+                <th style="color:darkblue">
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </th>
+                <th style="color:darkblue">
+                    @Html.DisplayName("Opening Date")
+                </th>
+                <th style="color:darkblue">
+                    @Html.DisplayName("Spec")
+                </th>
+                <th style="color:darkblue">
+                    @Html.DisplayName("Notice")
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                if (item.Department == dept)
+                {
+                    <tr>
+                        <td>
+                            @{i++;} @i
+                        </td>
+                        @if(item.TenderNew){
+                            <td>
+                                <img src="~/images/new.png" width="28" height="28" /> @Html.DisplayFor(modelItem => item.TenderNo)
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                 @Html.DisplayFor(modelItem => item.TenderNo)
+                            </td>
+                        }
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ItemDescription)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Quantity)
+                        </td>
+                        @if (item.OpeningDate == DateTime.Today)
+                        {
+                            <td style="color:red">
+                                @Html.DisplayFor(modelItem => item.OpeningDate)
+                            </td>
+                        }
+                        else// if(item.OpeningDate < DateTime.Today)
+                        {
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OpeningDate)
+                            </td>
+                        }
+                        @if (item.SpecURL != null)
+                        {
+                            <td>
+                                @if (item.TypeOfTender == "Open Tender")
+                                {
+                                    <a href="@Url.Content(item.SpecURL)" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-pdf-o" style="color:darkred" aria-hidden="true"></i><img src="~/images/openTender.png" width="28" height="28" /> </a>
+                                }
+                                else if (item.TypeOfTender == "Short Tender")
+                                {
+                                    <a href="@Url.Content(item.SpecURL)" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-pdf-o" style="color:darkred" aria-hidden="true"></i><img src="~/images/shortTender.png" width="28" height="28" /> </a>
+                                }
+                                else if (item.TypeOfTender == "Spot Tender")
+                                {
+                                    <a href="@Url.Content(item.SpecURL)" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-pdf-o" style="color:darkred" aria-hidden="true"></i><img src="~/images/spotTender.png" width="28" height="28" /> </a>
+                                }
+                                else
+                                {
+                                    <a href="@Url.Content(item.SpecURL)" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-pdf-o" style="color:darkred" aria-hidden="true"></i> </a>
+                                }
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                            </td>
+                        }
+                        @if (item.TenderNew)
+                        {
+                            if (item.NoticeURL != null)
+                            {
+                                <td>
+                                    <a href="@Url.Content(item.NoticeURL)" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-pdf-o" style="color:darkred" aria-hidden="true"></i> </a>
+                                    <img src="~/images/updated.png" width="28" height="28" />
+                                </td>
+                            }
+                            else
+                            {
+                                <td></td>
+                            }
+                        }
+                        else
+                        {
+                            if (item.NoticeURL != null)
+                            {
+                                    <td>
+                                        <a href="@Url.Content(item.NoticeURL)" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-pdf-o" style="color:darkred" aria-hidden="true"></i> </a>
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td></td>
+                                }
+                        }
+
+                        @if (User.IsInRole("Supplier"))
+                        {
+
+                                <td>
+                                    <button class="btn-info" onclick="location.href='@Url.Action("SupplierUploadFrontPage", "SuplierUploadModels", new { letterid = item.ID,supplierid = User.Identity.Name })';return false;">Upload/Edit Doc</button>
+                                </td>
+                            
+
+                        }
+                        else
+                        {
+                            <td></td>
+                        }
+
+                    </tr>
+
+                }
+            }
+
+        </table>
+     </fieldset>
+}
+

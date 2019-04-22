@@ -1,0 +1,43 @@
+﻿@model IEnumerable<BSDKhulna.Models.SuplierUploadModels>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "ViewUploads";
+}
+@section Scripts{
+    <script>
+
+        function theFunction (val,val1) {
+               location.href = "/SuplierUploadModels/ViewUploadDetails?letterid=" + val + "&supplierid=" + val1;
+        }
+     </script>
+ }
+<h3 style="text-align:center;font-family:Verdana;font-weight:bolder;color:cornflowerblue">Supplier Upload</h3>
+<hr />
+@{
+
+    var g = Model.GroupBy(r => Model.ToList().IndexOf(r) / 3).ToList();
+}
+
+<div style="background-color:lightseagreen">
+    <br /> <br />
+    @foreach (var item in g)
+    {
+        <div class="row col-md-12">
+            @foreach (var Item in item)
+            {
+
+                <div class="col-md-4"  >
+                    <div class="col-md-12" style="text-align:center;background-color:whitesmoke">
+                        <a onClick="theFunction('@Item.LetterID','@Item.SupplierID');" style="text-align:center;font-size:15px;width:950px;height:90px; color:black;font-family:Tahoma;font-weight:bold" class="a2">
+                            <p>Supplier: @Item.SupplierID</p>
+                            <p style="color:orangered">Price: @Item.price</p>
+                            <p style="color:darkblue">Quantity: @Item.Quantity @Item.Deno</p>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+        <br /><br />
+    }
+
+</div>

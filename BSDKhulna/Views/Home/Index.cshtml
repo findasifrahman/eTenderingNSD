@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "NSD Khulna Home";
+}
+<style>
+    .sidenav {
+
+    background: #2196F3;
+    overflow-x: hidden;
+    padding: 8px 0;
+
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #2196F3;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #064579;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196F3;
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  font-size: 13px;
+  text-align: center;
+}
+</style>
+<br />
+<div class="row">
+    <div class="col-md-2">
+        <fieldset style="border:solid 1px #064579 !important;;height:200px">  
+            <br/> 
+            <p style="font-family:Verdana;font-size:12px;text-align:justify;color:green">Downloads</p>  
+            <hr/>            
+                    <a href="https://www.winzip.com/win/en/downwz.html" style="color:blue;font-size:13px;text-align:justify">>  Winzip</a>     
+                     <br/>                       
+                    <a  href="https://get.adobe.com/reader/" style="color:blue;font-size:13px;text-align:justify">>  PDF View</a>  
+                    <br/>       
+        </fieldset>
+    </div>
+    <div class="col-md-6">
+        @RenderPage("~/Views/Account/Login.cshtml")
+    </div>
+    <div class="col-md-4">
+
+        <fieldset style="border:solid 1px #064579 !important;height:200px" >
+            <br />
+            <p style="font-family:Verdana;font-size:12px;text-align:justify">
+                Welcome to NSD Khulna E-tendering System. Here Supplier can view ongoing Tender schedule and general Notice uploaded by NSD Khulna.
+            </p>
+            <p style="font-family:Verdana;font-size:12px;text-align:justify">
+                Enlisted Supplier can also submit their bid online. Uploaded schedule can be edited or removed between before tender opening time. OIC will view the documents and take necessary action.   
+            </p>
+            <p style="font-family:Verdana;font-size:12px;text-align:justify">
+                Please Contact help Desk for furthur details
+            </p>
+        </fieldset>
+    </div>
+</div>
+
+

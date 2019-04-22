@@ -1,0 +1,102 @@
+﻿@model BSDKhulna.Models.SupplierModels
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "SupplierDetails";
+}
+
+<h3 style="font-weight:bold;color:turquoise;text-align:center">Details Of Supplier</h3>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+
+        <dt>
+            @Html.DisplayName("Supplier Group")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplierGroup)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Company Name")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Phone Number")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Cell Number")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CellNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Bar Code Number")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BarCodeNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("ID Card Number")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDCardNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("picture")
+        </dt>
+
+        @if (Model.pictureURL != null)
+        {
+            <dd>
+                <img src="@Url.Content(Model.pictureURL)" id="user_img" height="128" width="128" style="border:solid" /> 
+            </dd>
+        }
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Published)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Published)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SupplierName }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

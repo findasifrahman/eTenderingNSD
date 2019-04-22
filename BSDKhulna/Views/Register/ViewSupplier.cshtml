@@ -1,0 +1,35 @@
+﻿@model IEnumerable<BSDKhulna.Models.ApplicationUser>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "View Supplier";
+}
+    <fieldset>
+        <legend>View Supplier </legend>
+        
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tr></tr>
+
+                @foreach (var item in Model)
+                {
+                    if (item.roleName == "Supplier")
+                    {
+                        <tr>
+
+                            <td>
+                                <b>@Html.DisplayFor(modelItem => item.CompName)</b>
+                                <br />
+                                <b>Owner:</b> @item.owner<br />
+                                <b>Supplier:</b> @item.supplier <br />
+                                <b>Address:</b> @item.address<br />
+                                <b>Email:</b> @item.Email<br />
+                            </td>
+                        </tr>
+                    }
+                }
+
+            </table>
+        </div>
+        <br />
+
+</fieldset>

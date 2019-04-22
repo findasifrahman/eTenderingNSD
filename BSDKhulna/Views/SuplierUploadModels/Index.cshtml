@@ -1,0 +1,99 @@
+﻿@model IEnumerable<BSDKhulna.Models.SuplierUploadModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+if()
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LetterID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplierID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SupplierContact)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Deno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuoteDocURL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Other1DocURL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Other2DocURL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Other3DocURL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Other4DocURL)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.LetterID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupplierID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupplierContact)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Deno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuoteDocURL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Other1DocURL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Other2DocURL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Other3DocURL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Other4DocURL)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

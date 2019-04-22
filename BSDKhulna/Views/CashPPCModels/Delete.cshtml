@@ -1,0 +1,88 @@
+﻿@model BSDKhulna.Models.CashPPCModels
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this record?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenderNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenderNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DescriptionOfItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionOfItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPages)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPages)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IDCardNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDCardNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameOfTheFirm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameOfTheFirm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

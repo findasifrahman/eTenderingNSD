@@ -1,0 +1,147 @@
+﻿@model IEnumerable<BSDKhulna.Models.CashPPCModels>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "PPCCopySalesReport";
+}
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    #myInput {
+        background-image: url('/css/searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+    }
+
+    #myTable {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ddd;
+        font-size: 18px;
+    }
+
+        #myTable th, #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+            #myTable tr.header, #myTable tr:hover {
+                background-color: #f1f1f1;
+            }
+</style>
+
+@section Scripts{
+    <script>
+            function myFunction() {
+              // Declare variables
+              var input, filter, table, tr, td, i;
+              input = document.getElementById("myInput");
+              filter = input.value.toUpperCase();
+              table = document.getElementById("myTable");
+              tr = table.getElementsByTagName("tr");
+
+              // Loop through all table rows, and hide those who don't match the search query
+              for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                  if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                  } else {
+                    tr[i].style.display = "none";
+                  }
+                }
+              }
+            }
+    </script>
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("hello!");
+        }
+        function printDiv(elem) {
+            window.print();
+
+            return true;
+        }
+    </script>
+}
+<h3 style="font-weight:bold;color:darkblue;text-align:center">NSD Khulna</h3>
+<h3 style="font-weight:bold;color:darkblue;text-align:center">PPC Copy Sales Report</h3>
+
+
+<fieldset id="printableArea">
+    <legend>PPC Copy Sales Report @ViewBag.from @ViewBag.to</legend>
+    <b>@ViewBag.amount</b>
+    <br /><br />
+    <table id="myTable" style="font-size:smaller;font-family:'Times New Roman', Times, serif" class="myTable table-bordered">
+        <tr>
+            <th>
+                @Html.DisplayName("Tender No")
+            </th>
+            <th>
+                @Html.DisplayName("Description")
+            </th>
+            <th>
+                @Html.DisplayName("Pages")
+            </th>
+            <th>
+                @Html.DisplayName("Amount")
+            </th>
+            <th>
+                @Html.DisplayName("ID Card No")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayName("Firm")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenderNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DescriptionOfItem)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalPages)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalAmount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDCardNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NameOfTheFirm)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+            </tr>
+        }
+
+    </table>
+</fieldset>
+
+<input type="button" onclick="printDiv('printableArea')" class="btn" style="background-color:red;color:white" value="Print" />

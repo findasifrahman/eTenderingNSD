@@ -1,0 +1,146 @@
+﻿@model PagedList.IPagedList<BSDKhulna.Models.CashPPCModels>
+@using PagedList.Mvc;
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "PPCCopyIndex";
+}
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    #myInput {
+        background-image: url('/css/searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+    }
+
+    #myTable {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ddd;
+        font-size: 18px;
+    }
+
+        #myTable th, #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+            #myTable tr.header, #myTable tr:hover {
+                background-color: #f1f1f1;
+            }
+</style>
+
+@section Scripts{
+    <script>
+    </script>
+}
+
+
+<h3 style="font-weight:bold;color:darkblue;text-align:center">PPC Copy Form</h3>
+
+
+@using (Html.BeginForm("Index", "CashPPCModels", FormMethod.Get))
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-2 col-xs-6">
+                <div class="input-group">
+                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "col-md-1 col-xs-1 form-control control-label" })
+                    <span class="input-group-addon"><i class=" glyphicon glyphicon-search"></i></span>
+                </div>
+            </div>
+            <div class="col-md-1 col-lg-1 col-xs-1">
+                <input type="submit" value="Search" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+
+}
+
+<table id="myTable" style="font-size:small;font-family:'Times New Roman', Times, serif" class="myTable table-bordered">
+    <tr>
+        <th>
+            @Html.ActionLink("Tender No", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.DisplayName("Description")
+        </th>
+        <th>
+            @Html.DisplayName("Pages")
+        </th>
+        <th>
+            @Html.DisplayName("Amount")
+        </th>
+        <th>
+            @Html.DisplayName("ID Card No")
+        </th>
+        <th>
+            @Html.DisplayName("Name")
+        </th>
+        <th>
+            @Html.DisplayName("Firm")
+        </th>
+        <th>
+            @Html.DisplayName("Date")
+        </th>
+        <th>
+            @Html.DisplayName("Address")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenderNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescriptionOfItem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalPages)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDCardNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameOfTheFirm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PPCDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            <button class="btn-info" onclick="location.href='@Url.Action("Edit", "CashPPCModels", new { id = item.ID })';return false;">Edit</button>
+            <button class="btn-info" onclick="location.href='@Url.Action("Delete", "CashPPCModels", new { id = item.ID })';return false;">Delete</button>
+            <button class="btn-info" onclick="location.href='@Url.Action("Details", "CashPPCModels", new { id = item.ID })';return false;">Details</button>
+
+        </td>
+    </tr>
+}
+
+</table>
+
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

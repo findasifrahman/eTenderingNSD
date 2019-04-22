@@ -1,0 +1,127 @@
+﻿@model BSDKhulna.Models.SuplierUploadModels
+
+@{
+    ViewBag.Title = "SupplierUploadFrontPage";
+}
+
+
+@if (ViewBag.createshow != false)
+{
+    <div class="row" >
+        <div class="col-md-12">
+            <div class="col-md-12" style="background-color:lightseagreen">
+                 <br/>
+                <h2 style="text-align:center;font-weight:bold;color:whitesmoke">Submit Schedule for Tender</h2>
+                <hr/>
+                <br />
+                <div style="text-align:center">
+                    <button class="btn-danger" style="width:400px;font-size:xx-large;text-align:center;font-family:Tahoma;font-weight:bolder"
+                            onclick="location.href='@Url.Action("Create", "SuplierUploadModels", new { letterid = ViewBag.letetid,supplierid = ViewBag.suppid })';return false;">
+                        Click to Upload Schedule
+                    </button>
+
+                </div>
+                <br /><br /><br />
+            </div>
+        </div>
+    </div>
+
+}
+
+else if (Model != null)
+{
+    <h3 style="text-align:center;font-weight:bolder;color:darkcyan">Edit Uploaded Schedule</h3>
+    <div class="row" style="background-color:lightseagreen">
+        <fieldset>
+            <legend style="color:whitesmoke;font-weight:bold">Offered Price</legend>
+            <p style="font-weight:bolder;color:firebrick;text-align:center;font-size:x-large">
+                Price: @Model.price
+            </p>
+
+        </fieldset>
+
+        <dl class="dl-horizontal col-md-12" style="background-color:whitesmoke">
+
+            <dt>
+                @Html.DisplayName("Supplier Contact")
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SupplierContact)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Quantity) @Html.DisplayFor(model => model.Deno)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Date)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Date)
+            </dd>
+
+
+            @if (Model.QuoteDocURL != null)
+            {
+                <dt>
+                    @Html.DisplayName("Quotation")
+                </dt>
+                <dd>
+                    <a href="@Url.Content(Model.QuoteDocURL)" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-pdf-o fa-2x" style="color:darkred" aria-hidden="true"></i> </a>
+                </dd>
+            }
+            @if (Model.Other1DocURL != null)
+            {
+                <dt>
+                    @Html.DisplayName("Other Doc One")
+                </dt>
+                <dd>
+                    <a href="@Url.Content(Model.Other1DocURL)" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-pdf-o fa-2x" style="color:darkred" aria-hidden="true"></i> </a>
+                </dd>
+            }
+            @if (Model.Other2DocURL != null)
+            {
+                <dt>
+                    @Html.DisplayName("Other Doc Two")
+                </dt>
+                <dd>
+                    <a href="@Url.Content(Model.Other2DocURL)" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-pdf-o fa-2x" style="color:darkred" aria-hidden="true"></i> </a>
+                </dd>
+            }
+
+            @if (Model.Other3DocURL != null)
+            {
+                <dt>
+                    @Html.DisplayName("Other Doc Three")
+                </dt>
+                <dd>
+                    <a href="@Url.Content(Model.Other3DocURL)" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-pdf-o fa-2x" style="color:darkred" aria-hidden="true"></i> </a>
+                </dd>
+            }
+
+            @if (Model.Other4DocURL != null)
+            {
+                <dt>
+                    @Html.DisplayName("Other Doc Four")
+                </dt>
+                <dd>
+                    <a href="@Url.Content(Model.Other4DocURL)" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-pdf-o fa-2x" style="color:darkred" aria-hidden="true"></i> </a>
+                </dd>
+            }
+
+        </dl>
+    </div>
+    <br/><br/>
+    <div class="row" style="text-align:center">
+        <button class="btn-success" style="width:300px;font-size:larger" onclick="location.href='@Url.Action("Edit", "SuplierUploadModels", new { letterid = Model.LetterID,supplierid = Model.SupplierID })';return false;">Edit Data</button>
+        <button class="btn-danger" style="width:300px;font-size:larger" onclick="location.href='@Url.Action("Delete", "SuplierUploadModels", new { letterid = Model.LetterID,supplierid = Model.SupplierID })';return false;">Delete Data</button>
+    </div>
+
+
+}

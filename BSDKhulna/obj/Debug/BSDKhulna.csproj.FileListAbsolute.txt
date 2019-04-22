@@ -1,0 +1,354 @@
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\ApplicationInsights.config
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\roslyn\csc.exe
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.CodeAnalysis.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.CSharp.Core.targets
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.VisualBasic.Core.targets
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\roslyn\System.Collections.Immutable.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\roslyn\System.Reflection.Metadata.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\roslyn\vbc.exe
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\roslyn\VBCSCompiler.exe
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\roslyn\VBCSCompiler.exe.config
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\BSDKhulna.dll.config
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\BSDKhulna.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\BSDKhulna.pdb
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Antlr3.Runtime.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\EntityFramework.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\EntityFramework.SqlServer.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.AI.Agent.Intercept.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.AI.DependencyCollector.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.AI.PerfCounterCollector.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.AI.ServerTelemetryChannel.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.AI.Web.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.AI.WindowsServer.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.ApplicationInsights.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Google.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.Web.Infrastructure.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Newtonsoft.Json.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Owin.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\System.Web.Helpers.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\System.Web.Mvc.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\System.Web.Optimization.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\System.Web.Razor.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.Deployment.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.Razor.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\WebGrease.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.AI.DependencyCollector.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.AI.ServerTelemetryChannel.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.AI.Web.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.AI.WindowsServer.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.ApplicationInsights.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\System.Web.Helpers.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\System.Web.Mvc.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\System.Web.Optimization.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\System.Web.Razor.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.Deployment.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.Razor.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Antlr3.Runtime.pdb
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Newtonsoft.Json.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\EntityFramework.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\EntityFramework.SqlServer.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Google.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.csprojResolveAssemblyReference.cache
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.dll
+c:\users\asif\documents\visual studio 2015\Projects\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.pdb
+C:\Users\asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\bin\PagedList.dll
+C:\Users\asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\bin\PagedList.Mvc.dll
+C:\Users\asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\bin\PagedList.xml
+C:\Users\asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\bin\PagedList.Mvc.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\ApplicationInsights.config
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\csc.exe
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\vbc.exe
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\VBCSCompiler.exe
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\BSDKhulna.dll.config
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\BSDKhulna.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\BSDKhulna.pdb
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Antlr3.Runtime.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\EntityFramework.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\EntityFramework.SqlServer.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.Web.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Newtonsoft.Json.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Owin.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\PagedList.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\PagedList.Mvc.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Helpers.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Mvc.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Optimization.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Razor.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.Razor.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\WebGrease.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.Web.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\PagedList.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\PagedList.Mvc.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Helpers.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Mvc.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Optimization.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Razor.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.Razor.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Antlr3.Runtime.pdb
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Newtonsoft.Json.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\EntityFramework.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\EntityFramework.SqlServer.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.csprojResolveAssemblyReference.cache
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.dll
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.pdb
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\ApplicationInsights.config
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\csc.exe
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\vbc.exe
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\VBCSCompiler.exe
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\BSDKhulna.dll.config
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\BSDKhulna.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\BSDKhulna.pdb
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Antlr3.Runtime.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\EntityFramework.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\EntityFramework.SqlServer.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.Web.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.ApplicationInsights.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Newtonsoft.Json.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Owin.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\PagedList.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\PagedList.Mvc.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Helpers.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Mvc.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Optimization.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Razor.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.Deployment.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.Razor.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\WebGrease.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.Web.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.ApplicationInsights.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\PagedList.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\PagedList.Mvc.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Helpers.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Mvc.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Optimization.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Razor.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.Deployment.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.Razor.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Antlr3.Runtime.pdb
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Newtonsoft.Json.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\EntityFramework.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\EntityFramework.SqlServer.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.csprojResolveAssemblyReference.cache
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.dll
+C:\Users\asif\Desktop\BSDKhulna\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.pdb
+C:\Users\asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.Migrations.AdminDBKhulna.resources
+C:\Users\asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.csproj.GenerateResource.Cache
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.Migrations.AdminDBKhulna1.resources
+C:\Users\Asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.Migrations.AdminDBKhulna2.resources
+C:\Users\asif\Documents\Visual Studio 2015\Projects\BSDKhulna\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.Migrations.AdminDBKhulna3.resources
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\ApplicationInsights.config
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\csc.exe
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\vbc.exe
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\VBCSCompiler.exe
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\BSDKhulna.dll.config
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\BSDKhulna.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\BSDKhulna.pdb
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Antlr3.Runtime.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\EntityFramework.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\EntityFramework.SqlServer.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.Web.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Newtonsoft.Json.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Owin.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\PagedList.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\PagedList.Mvc.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Helpers.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Mvc.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Optimization.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Razor.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.Razor.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\WebGrease.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.Web.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\PagedList.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\PagedList.Mvc.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Helpers.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Mvc.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Optimization.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.Razor.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\System.Web.WebPages.Razor.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Antlr3.Runtime.pdb
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Newtonsoft.Json.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\EntityFramework.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\EntityFramework.SqlServer.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.csprojResolveAssemblyReference.cache
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.Migrations.AdminDBKhulna.resources
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.Migrations.AdminDBKhulna1.resources
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.Migrations.AdminDBKhulna2.resources
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.Migrations.AdminDBKhulna3.resources
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.csproj.GenerateResource.Cache
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.dll
+C:\Users\Asif\Desktop\boro mama docs\BSDKhulna\BSDKhulna\BSDKhulna\obj\Debug\BSDKhulna.pdb

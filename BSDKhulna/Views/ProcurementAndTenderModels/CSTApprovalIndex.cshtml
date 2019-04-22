@@ -1,0 +1,160 @@
+﻿@model PagedList.IPagedList<BSDKhulna.Models.ProcurementAndTenderModels>
+@using PagedList.Mvc;
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "CSTApprovalIndex";
+}
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    #myInput {
+        background-image: url('/css/searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+    }
+
+    #myTable {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ddd;
+        font-size: 18px;
+    }
+
+        #myTable th, #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+            #myTable tr.header, #myTable tr:hover {
+                background-color: #f1f1f1;
+            }
+</style>
+@section Scripts{
+    <script type="text/javascript">
+            function printDiv(divName) {
+                var x = document.getElementById("visi");
+                x.style.display = "none";
+                x = document.getElementsByClassName("visi2");
+                for (var i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                document.getElementById("print").style.display = "none";
+                window.print();
+
+            }
+    </script>
+}
+
+
+<h2 style="font-weight:bold;color:darkblue;text-align:center">NSD Khulna</h2>
+<h3 style="font-weight:bold;color:darkblue;text-align:center">Awaiting For CST Approaval</h3>
+
+@using (Html.BeginForm("CSTApprovalIndex", "ProcurementAndTenderModels", FormMethod.Get))
+{
+    <div class="form-horizontal" id="visi">
+        <div class="form-group">
+            <div class="col-md-2 col-xs-6">
+                <div class="input-group">
+                    @Html.TextBox("searchString", ViewBag.CurrentFilter as string, new { @class = "col-md-1 col-xs-1 form-control control-label" })
+                    <span class="input-group-addon"><i class=" glyphicon glyphicon-search"></i></span>
+                </div>
+            </div>
+            <div class="col-md-1 col-lg-1 col-xs-1">
+                <input type="submit" value="Search" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+
+}
+
+
+@foreach (var dept in ViewBag.departmentlist)
+{
+
+    var i = 0;
+    <br />
+    <fieldset id="printableArea">
+    <legend>@dept Items</legend>
+    <table id="myTable" style="font-size:small;font-family:'Times New Roman', Times, serif" class="myTable table-bordered">
+        <tr>
+            <th>
+                @Html.ActionLink("Letter No", "CSTApprovalIndex", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.DisplayName("Description")
+            </th>
+            <th>
+                @Html.DisplayName("Tender No")
+            </th>
+            <th>
+                @Html.DisplayName("Opening Date")
+            </th>
+            <th>
+                @Html.DisplayName("Price")
+            </th>
+            <th>
+                @Html.DisplayName("CST Forwarded To")
+            </th>
+            <th>
+                @Html.DisplayName("CST Action")
+            </th>
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            if (item.Department == dept)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LetterNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ItemDescription)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TenderNo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OpeningDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.price)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CSTForwardedTo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CSTAction)
+                        </td>
+                        <td class="visi2">
+                            @Html.ActionLink("Details", "Details", new { id = item.ID })
+                        </td>
+                    </tr>
+            }
+        }
+
+    </table>
+</fieldset>
+}
+
+<center>
+    <button class="btn btn-danger hidden-print" id="print" onclick="printDiv('printableArea')"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button>
+</center>
+<br/><br/>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("CSTApprovalIndex",
+new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

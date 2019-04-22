@@ -1,0 +1,35 @@
+﻿@model IEnumerable<BSDKhulna.Models.SupplierModels>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "View Supplier";
+}
+<fieldset>
+    <legends style="color:firebrick;font-weight:bolder;font-family:Verdana">View Supplier </legends>
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <tr></tr>
+
+            @foreach (var item in Model)
+            {
+                if (item.Published)
+                {
+                    <tr>
+
+                        <td>
+                            <b style="color:lightseagreen">@Html.DisplayFor(modelItem => item.CompanyName)</b>
+                            <br />
+                            <b>Owner:</b> @item.SupplierName<br />
+                            <b>Supplier:</b> @item.SupplierGroup <br />
+                            <b>Address:</b> @item.Address<br />
+                            <b>Email:</b> <b style="color:darkblue">@item.Email</b><br />
+                        </td>
+                    </tr>
+                }
+            }
+
+        </table>
+    </div>
+    <br />
+
+</fieldset>

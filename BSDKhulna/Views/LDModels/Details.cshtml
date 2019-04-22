@@ -1,0 +1,93 @@
+﻿@model BSDKhulna.Models.LDModels
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "LDDetails";
+}
+@section Scripts{
+    <script type="text/javascript">
+            function printDiv(divName) {
+                /*var printContents = document.getElementById(divName).innerHTML;
+                var originalContents = document.body.innerHTML;
+
+                document.body.innerHTML = printContents;
+
+                window.print();
+
+                document.body.innerHTML = originalContents;*/
+                window.print();
+            }
+    </script>
+}
+<h2 style="font-weight:bold;color:darkblue;text-align:center">NSD Khulna</h2>
+<h3 style="font-weight:bold;color:darkblue;text-align:center">LD Details</h3>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Purchase Order No")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PurchaseOrderNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("LD Reference No")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LDReferenceNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("PO Date")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PODate)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Company Name")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("LDAmount")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LDAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Total Amount")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Percent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Percent)
+        </dd>
+
+    </dl>
+</div>
+<center>
+    <button class="btn btn-primary hidden-print" onclick="printDiv('printableArea')"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button>
+</center>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

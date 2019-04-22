@@ -1,0 +1,68 @@
+﻿@model IEnumerable<BSDKhulna.Models.ContactModels>
+
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "View Contact";
+}
+<fieldset>
+    <legend style="color:firebrick;font-weight:bolder;font-family:Verdana">NSD Khulna Contact </legend>
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <tr></tr>
+
+            @foreach (var item in Model)
+            {
+
+                <tr>
+
+                    <td>
+                        <b style="color:lightseagreen">@Html.DisplayFor(modelItem => item.Name)</b>
+                        <br />
+                        @if (item.duty != null)
+                        {
+                            <b style="color:orangered;font-weight:bold">@item.duty</b><br />
+                        }
+                        @if (item.AddressLine1 != null)
+                        {
+                             @item.AddressLine1 <br />
+                        }
+                        @if (item.AddressLine2 != null)
+                        {
+                            @item.AddressLine2 <br />
+                        }
+                        @if (item.AddressLine3 != null)
+                        {
+                            @item.AddressLine3 <br />
+                        }
+                        @if (item.AddressLine4 != null)
+                        {
+                            @item.AddressLine4 <br />
+                        }
+                        @if (item.cell != null)
+                        {
+                            @item.cell <br />
+                        }
+                        @if (item.phone != null)
+                        {
+                            @item.phone <br />
+                        }
+                        @if (item.fax != null)
+                        {
+                            @item.fax <br />
+                        }
+                        @if (item.email != null)
+                        {
+                            <strong style="color:darkblue">@item.email </strong><br />
+                        }
+
+                    </td>
+                </tr>
+                
+            }
+
+        </table>
+    </div>
+    <br />
+
+</fieldset>

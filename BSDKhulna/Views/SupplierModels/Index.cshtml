@@ -1,0 +1,169 @@
+﻿@model PagedList.IPagedList<BSDKhulna.Models.SupplierModels>
+@using PagedList.Mvc;
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "SupplierIndex";
+}
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    #myInput {
+        background-image: url('/css/searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+    }
+
+    #myTable {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ddd;
+        font-size: 18px;
+    }
+
+        #myTable th, #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+            #myTable tr.header, #myTable tr:hover {
+                background-color: #f1f1f1;
+            }
+</style>
+
+<h3 style="font-weight:bold;color:darkblue;text-align:center">List Supplier</h3>
+
+@section Scripts{
+    <script>
+            function myFunction() {
+              // Declare variables
+              var input, filter, table, tr, td, i;
+              input = document.getElementById("myInput");
+              filter = input.value.toUpperCase();
+              table = document.getElementById("myTable");
+              tr = table.getElementsByTagName("tr");
+
+              // Loop through all table rows, and hide those who don't match the search query
+              for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                  if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                  } else {
+                    tr[i].style.display = "none";
+                  }
+                }
+              }
+            }
+    </script>
+}
+
+<input type="text" id="myInput" class="form-control" onkeyup="myFunction()" placeholder="Search for Supplier.." title="Type in a Group..">
+@using (Html.BeginForm("Index", "SupplierModels", FormMethod.Get))
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-2 col-xs-6">
+                <div class="input-group">
+                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "col-md-1 col-xs-1 form-control control-label" })
+                    <span class="input-group-addon"><i class=" glyphicon glyphicon-search"></i></span>
+                </div>
+            </div>
+            <div class="col-md-1 col-lg-1 col-xs-1">
+                <input type="submit" value="Search" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+
+}
+
+<table id="myTable" style="font-size:smaller;font-family:'Times New Roman', Times, serif" class="myTable table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayName("picture")
+        </th>
+        <th>
+            @Html.ActionLink("Supplier Name", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.DisplayName("Group")
+        </th>
+        <th>
+            @Html.ActionLink("Company", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+        </th>
+        <th>
+            @Html.DisplayName("Phone")
+        </th>
+        <th>
+            @Html.DisplayName("Email")
+        </th>
+        <th>
+            @Html.DisplayName("Bar Code")
+        </th>
+        <th>
+            @Html.DisplayName("ID Card")
+        </th>
+
+        <th>
+            @Html.DisplayName("Published")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @if (item.pictureURL != null)
+            {
+                <img src="@Url.Content(item.pictureURL)" id="user_img" height="64" width="64" style="border:solid" />
+            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupplierName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SupplierGroup)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BarCodeNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDCardNumber)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Published)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SupplierName }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SupplierName }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SupplierName })
+        </td>
+    </tr>
+}
+
+</table>
+
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

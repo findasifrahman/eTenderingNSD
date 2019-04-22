@@ -1,0 +1,234 @@
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - NSD Khulna</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        body {
+            padding-top: 50px;
+            padding-bottom: 20px;
+            padding-left:0px;
+            padding-right:0px
+        }
+        .body-content {
+            padding-left: 65px;
+            padding-right: 15px;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        fieldset {
+            border: solid 1px #DDD !important;
+            padding: 0 10px 10px 10px;
+            border-bottom: none;
+        }
+
+        legend {
+            width: auto !important;
+            border: none;
+            font-size: 14px;
+        }
+           .navbar-inverse {
+                background-color: Highlight;
+                border-color: #E7E7E7;
+            }
+           .body-content{
+               color:black;
+           }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+        <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:Highlight">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("NSD Khulna", "Index", "Home", new { area = "" }, new { @class = "navbar-brand",@style = "font-weight:bold;color:#ffffff" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Procurement and Tender", "ProcurementFrontPage", "ProcurementAndTenderModels")</li>
+                        <li>@Html.ActionLink("General Notice", "GeneralNoticeFront", "GeneralNoticeModels")</li>
+                        <li>@Html.ActionLink("Enlisted Supplier", "ViewSupplier", "SupplierModels")</li>
+                        <li>@Html.ActionLink("Schedule", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Contact NSD Khulna", "ViewContact", "ContactModels")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>
+    
+    <nav class="navbar navbar-inverse sidebar" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    @if (User.IsInRole("Admin") || User.IsInRole("IT"))
+                    {
+                        <li class="" style="height:35px;"><a href="/ProcurementAndTenderModels/Create" style="font-size:small">Create Tender<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                    }
+                    @if(User.IsInRole("Admin") || User.IsInRole("IT") || User.IsInRole("CST") || User.IsInRole("LP") || User.IsInRole("CR") || User.IsInRole("CINS") || User.IsInRole("BILL")) { 
+                        <li class="" style="height:35px"><a href="/ProcurementAndTenderModels/index" style="font-size:small">View Tender<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                    }
+                    @if (User.IsInRole("Admin") || User.IsInRole("PPC"))
+                    {
+                        <li class="" style="height:35px"><a href="/CashPPCModels/Create" style="font-size:small">PPC Copy Form<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                        <li class="" style="height:35px"><a href="/CashPPCModels/Index" style="font-size:small">View Total PPC<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                        <li class="" style="height:35px"><a href="/CashPPCModels/PPCCopySalesReport" style="font-size:small">PPC Copy Report<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                        <li class="" style="height:35px"><a href="/LDModels/Create" style="font-size:small">LD Form<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                        <li class="" style="height:35px"><a href="/LDModels/index" style="font-size:small">Grand LD<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                    }
+                    @if (User.IsInRole("Admin") || User.IsInRole("LP") || User.IsInRole("IT"))
+                    {
+                        <li class="" style="height:35px"><a href="/ProcurementAndTenderModels/CSTApprovalIndex" style="font-size:small">Awaiting For CST Aproval<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                    }
+                    @if (User.IsInRole("Admin") || User.IsInRole("CR") || User.IsInRole("IT")) {
+                        <li class="" style="height:35px"><a href="/ProcurementAndTenderModels/NotYetSuppliedReport" style="font-size:small">Not yet Supplied<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                    }
+                    @if (User.IsInRole("Admin") || User.IsInRole("CINS") || User.IsInRole("IT"))
+                    {
+                        <li class="" style="height:35px"><a href="/ProcurementAndTenderModels/NotYetInspected" style="font-size:small">Not yet Inspected<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                    }
+                    @if (User.IsInRole("Admin") || User.IsInRole("CINS") || User.IsInRole("IT")) {
+                        <li class="" style="height:35px"><a href="/ProcurementAndTenderModels/InspectedResult" style="font-size:small">Inspected Result<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                    }
+                    @if (User.IsInRole("Admin") || User.IsInRole("BILL") || User.IsInRole("IT")) {
+                        <li class="" style="height:35px"><a href="/ProcurementAndTenderModels/waitingForBill" style="font-size:small">Not yet Billed<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                    }
+                    @if (User.IsInRole("Admin") ||  User.IsInRole("IT"))
+                    {
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="background-color:black">General Notice<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-file"></span></a>
+                            <ul class="dropdown-menu" style="background-color:#808080">
+                                <li class="" style="height:35px"><a href="/GeneralNoticeModels/Create" style="font-size:small">Add Notice<span style="font-size:11px;" class="pull-right hidden-xs showopacity"></span></a></li>
+                                <li class="" style="height:35px"><a href="/GeneralNoticeModels/index" style="font-size:small">View Notice<span style="font-size:11px;" class="pull-right hidden-xs showopacity"></span></a></li>
+                      
+                            </ul>
+                        </li>
+                    }
+                    @if (User.IsInRole("Admin") || User.IsInRole("IT") || User.IsInRole("PPC"))
+                    {
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="background-color:black">Supplier Detail<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-stats"></span></a>
+                            <ul class="dropdown-menu forAnimate" role="menu">
+                                <li class="" style="height:35px"><a href="/CompanyNameModels/Create" style="font-size:small">Add Supplier Company<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                                <li class="" style="height:35px"><a href="/CompanyNameModels/index" style="font-size:small">View Supplier Company<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                                <li class="" style="height:35px"><a href="/SupplierGroupModels/Create" style="font-size:small">Add Supplier Group<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                                <li class="" style="height:35px"><a href="/SupplierGroupModels/index" style="font-size:small">View Supplier Group<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                                <li class="" style="height:35px"><a href="/SupplierModels/Create" style="font-size:small">Add Supplier<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                                <li class="" style="height:35px"><a href="/SupplierModels/index" style="font-size:small">View Supplier<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                            </ul>
+                        </li>
+                    }
+                    @if (User.IsInRole("Admin") || User.IsInRole("IT"))
+                    {
+                        <li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="background-color:black">User<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-file"></span></a>
+                            <ul class="dropdown-menu" style="background-color:#808080">
+                                <li class="" style="height:35px"><a href="/Account/Register" style="font-size:small">Register or Add User<span style="font-size:12px;" class="pull-right hidden-xs showopacity"></span></a></li>
+                                <li class="" style="height:35px"><a href="/Register/index" style="font-size:small">View Registered User<span style="font-size:12px;" class="pull-right hidden-xs showopacity"></span></a></li>
+                                <li class="" style="height:35px"><a href="/Role/index" style="font-size:small">Role<span style="font-size:12px;" class="pull-right hidden-xs showopacity"></span></a></li>
+                            </ul>
+                        </li>
+                    }
+                    @if (User.IsInRole("Admin") || User.IsInRole("IT") || User.IsInRole("CST") || User.IsInRole("LP") || User.IsInRole("CR") || User.IsInRole("CINS") || User.IsInRole("BILL") || User.IsInRole("PPC"))
+                    {
+                        <li class="" style="height:35px"><a href="/Manage/Index" style="font-size:small">Change Your Password<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                    }
+                    @if (User.IsInRole("Admin") || User.IsInRole("IT"))
+                    {
+                        <li class="" style="height:35px"><a href="/ContactModels/Create" style="font-size:small">Add Contact<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                        <li class="" style="height:35px"><a href="/ContactModels/Index" style="font-size:small">View Contact<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                    }
+                    @if (User.IsInRole("Admin") || User.IsInRole("IT"))
+                    {
+                        <li class="" style="height:35px"><a href="/welcomeNoticeModels/Index" style="font-size:small">Change Notice<span style="font-size:12px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+                    }
+                    @if (User.IsInRole("Admin") || User.IsInRole("IT") || User.IsInRole("CST") || User.IsInRole("LP") || User.IsInRole("CR") || User.IsInRole("CINS") || User.IsInRole("BILL") || User.IsInRole("PPC"))
+                    {
+                        if (Request.IsAuthenticated)
+                        {
+                            
+                            using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-left" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <br />
+                                <li style="height:35px;padding-left:15px">
+                                    @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+ 
+                                </li>
+                                
+                                <li  style="height:35px;padding-left:15px"><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                            }
+                        }
+                        else
+                        {
+
+                                <li  style="height:35px;padding-left:15px">@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                                <li  style="height:35px;padding-left:15px">@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                         
+                        }
+
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Intricate Lab</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <link rel="stylesheet" href="~/Content/bootstrap-select.min.css">
+    <script src="~/Scripts/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="~/Content/site2.css">
+    <style>
+        fieldset.scheduler-border {
+            border: 1px groove #ddd !important;
+            padding: 0 1.4em 1.4em 1.4em !important;
+            margin: 0 0 1.5em 0 !important;
+            -webkit-box-shadow: 0px 0px 0px 0px #000;
+            box-shadow: 0px 0px 0px 0px #000;
+        }
+
+
+        legend.scheduler-border {
+            width: inherit; /* Or auto */
+            padding: 0 10px; /* To give a bit of padding on the left and right */
+            border-bottom: none;
+        }
+    </style>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

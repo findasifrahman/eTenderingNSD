@@ -1,0 +1,154 @@
+﻿@model IEnumerable<BSDKhulna.Models.ProcurementAndTenderModels>
+@using PagedList.Mvc;
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Not Yet Supplied";
+}
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    #myInput {
+        background-image: url('/css/searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+    }
+
+    #myTable {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ddd;
+        font-size: 18px;
+    }
+
+        #myTable th, #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+            #myTable tr.header, #myTable tr:hover {
+                background-color: #f1f1f1;
+            }
+</style>
+@section Scripts{
+    <script>
+          $(document).ready(function(){
+              $('#myTable').dataTable();
+          });
+
+            function myFunction() {
+              // Declare variables
+              var input, filter, table, tr, td, i;
+              input = document.getElementById("myInput");
+              filter = input.value.toUpperCase();
+              table = document.getElementById("myTable");
+              tr = table.getElementsByTagName("tr");
+
+              // Loop through all table rows, and hide those who don't match the search query
+              for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                  if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                  } else {
+                    tr[i].style.display = "none";
+                  }
+                }
+              }
+            }
+    </script>
+    <script type="text/javascript">
+        function printDiv(divName) {
+            var x = document.getElementById("myInput");
+            x.style.display = "none";
+            var x = document.getElementsByClassName("visi2");
+
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+   
+
+            document.getElementById("print").style.display = "none";
+            window.print();
+        }
+    </script>
+
+}
+
+<h2 style="font-weight:bold;color:darkblue;text-align:center">NSD Khulna</h2>
+<h3 style="font-weight:bold;color:darkblue;text-align:center">Not Yet Supplied</h3>
+
+
+<input type="text" id="myInput" class="form-control" onkeyup="myFunction()" placeholder="Search for Letter No.." title="Search....">
+<table id="myTable" style="font-size:small;font-family:'Times New Roman', Times, serif" class="myTable table-bordered">
+    <tr>
+        <th>
+            Letter No
+        </th>
+        <th>
+            Approval Letter No
+        </th>
+        <th>
+           Purchase Order No
+        </th>
+        <th>
+            @Html.DisplayName("Description")
+        </th>
+        <th>
+            @Html.DisplayName("Delivery Place")
+        </th>
+        <th>
+            @Html.DisplayName("Last Date of Supply")
+        </th>
+        <th>
+            @Html.DisplayName("Supplier")
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LetterNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApprovalLetterNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseOrderNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescriptionOfItems)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlaceOfDelivery)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastDateOfSupply)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameOfTheSupplier)
+            </td>
+            <td class="visi2">
+                @Html.ActionLink("Details", "Details", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
+<center>
+    <button class="btn btn-primary hidden-print" id="print" onclick="printDiv('printableArea')"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button>
+</center>

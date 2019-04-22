@@ -1,0 +1,63 @@
+﻿@model BSDKhulna.Models.GeneralNoticeModels
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "GeneralNoticeCreate";
+}
+
+<script type="text/javascript">
+
+   function show1(input) {
+      if (input.files && input.files[0]) {
+          var filerdr = new FileReader();
+          var imgtag = document.getElementById("general_img");
+          imgtag.src = "/images/pdficon.png"
+
+      /*filerdr.onload = function (e) {
+         $('#spec_img').attr('src', e.target.result);
+      }*/
+            filerdr.readAsDataURL(input.files[0]);
+      }
+   }
+
+</script>
+<h3 style="font-weight:bold;color:turquoise;text-align:center">Create General Notice</h3>
+
+@using (Html.BeginForm("Create", "GeneralNoticeModels", FormMethod.Post, new { enctype = "multipart/form-data" })) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="row">
+                <div class="col-md-6 col-lg-12">
+                @Html.Label("Browse General Notice", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-3">
+                        <div> <img id="general_img" height="128" width="128" style="border:solid" /> </div>
+                        <br />
+                        <div>
+                            <input accept=".pdf" class="btn btn-default" type="file" title="search image" id="file1" name="file1" onchange="show1(this)" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br /> <br />
+            <div class="form-group">
+                @Html.Label("Description of Notice", htmlAttributes: new { @class = "control-label col-md-3" })
+                <div class="col-md-9">
+                    @Html.TextAreaFor(model => model.DescriptionOfNotice, 8, 40, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.DescriptionOfNotice, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-3 col-md-9">
+                    <input type="submit" value="Create" class="btn btn-info" style="width:400px" />
+                </div>
+            </div>
+        </div>
+}
+
+

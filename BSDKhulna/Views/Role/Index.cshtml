@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityRole>
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container">
+    <h2>Departments List</h2>
+
+    <p class="margin-smalla">
+        <button class="btn btn-danger" onclick="location.href='@Url.Action("Create", "Role")';return false;">Create new Department</button>
+    </p>
+
+    <table class="table">
+        <tr>
+            <th>
+                Department (Role)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <button class="btn btn-info" onclick="location.href='@Url.Action("Delete", "Role",new { id=item.Name })';return false;">Delete</button>
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>

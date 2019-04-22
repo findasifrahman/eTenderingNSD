@@ -1,0 +1,28 @@
+﻿@model BSDKhulna.Models.IndexViewModel
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Account Manage";
+}
+
+<h2>Account Details.</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Password:</dt>
+        <dd>
+            [
+                @if (Model.HasPassword)
+                {
+                    @Html.ActionLink("Change your password", "ChangePassword")
+                }
+                else
+                {
+                    @Html.ActionLink("Create", "SetPassword")
+                }
+            ]
+        </dd>
+
+    </dl>
+</div>

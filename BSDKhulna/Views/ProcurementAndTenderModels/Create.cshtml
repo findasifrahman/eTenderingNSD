@@ -1,0 +1,200 @@
+﻿@model BSDKhulna.Models.ProcurementAndTenderModels
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Create";
+}
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('.selectpicker').selectpicker({
+                liveSearch: true,
+                showSubtext: false
+            });
+
+            $("#ITSection").show();
+
+            $("#CSTSection").hide(); $("#LPSection").hide();
+            $("#CRSection").hide(); $("#CINSSection").hide(); $("#BillSection").hide();
+
+            $("#btnIT").click(function () {
+                $("#ITSection").show(); $("#CSTSection").hide(); $("#LPSection").hide();
+                $("#CRSection").hide(); $("#CINSSection").hide(); $("#BillSection").hide();
+            });
+            $("#btnCST").click(function () {
+                $("#ITSection").hide(); $("#CSTSection").show(); $("#LPSection").hide();
+                $("#CRSection").hide(); $("#CINSSection").hide(); $("#BillSection").hide();
+            });
+            $("#btnLP").click(function () {
+                $("#ITSection").hide(); $("#CSTSection").hide(); $("#LPSection").show();
+                $("#CRSection").hide(); $("#CINSSection").hide(); $("#BillSection").hide();
+            });
+            $("#btnCR").click(function () {
+                $("#ITSection").hide(); $("#CSTSection").hide(); $("#LPSection").hide();
+                $("#CRSection").show(); $("#CINSSection").hide(); $("#BillSection").hide();
+            });
+            $("#btnCINS").click(function () {
+                $("#ITSection").hide(); $("#CSTSection").hide(); $("#LPSection").hide();
+                $("#CRSection").hide(); $("#CINSSection").show(); $("#BillSection").hide();
+            });
+            $("#btnBill").click(function () {
+                $("#ITSection").hide(); $("#CSTSection").hide(); $("#LPSection").hide();
+                $("#CRSection").hide(); $("#CINSSection").hide(); $("#BillSection").show();
+            });
+        });
+    </script>
+
+<script type="text/javascript">
+
+   function show1(input) {
+      if (input.files && input.files[0]) {
+          var filerdr = new FileReader();
+          var imgtag = document.getElementById("spec_img");
+          imgtag.src = "/images/pdficon.png"
+
+      /*filerdr.onload = function (e) {
+         $('#spec_img').attr('src', e.target.result);
+      }*/
+            filerdr.readAsDataURL(input.files[0]);
+      }
+   }
+   function show2(input) {
+       if (input.files && input.files[0]) {
+           var filerdr = new FileReader();
+           filerdr.onload = function (e) {
+               $('#notice_img2').attr('src', e.target.result);
+           }
+           filerdr.readAsDataURL(input.files[0]);
+       }
+   }
+
+
+</script>
+ }
+<h3 style="text-align:center;color:darkblue;font-family:Tahoma;font-style:normal;font-weight:bold">Create New Tender</h3>
+
+<hr />
+<div class="btn-group">
+    <button type="button" id="btnIT" name="btnIT"  class="btn btn-primary" autofocus  >IT Section</button>
+    <button type="button" id="btnCST" name="btnCST" class="btn btn-primary">CST Section</button>
+    <button type="button" id="btnLP" name="btnLP" class="btn btn-primary">LP Section</button>
+    <button type="button" id="btnCR" name="btnCR" class="btn btn-primary">CR Section</button>
+    <button type="button" id="btnCINS" name="btnCINS" class="btn btn-primary">CINS/ACINS Section</button>
+    <button type="button" id="btnBill" name="btnBill" class="btn btn-primary">Bill Section</button>
+</div>
+
+<br /> <br />
+
+@using (Html.BeginForm("Create", "ProcurementAndTenderModels", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+ 
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <fieldset id="ITSection">
+            <legend>IT Section </legend>        
+            <div class="form-group">
+                @Html.Label("Date", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ITDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ITDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <b style="color:red">@ViewBag.error</b>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                @Html.Label("Letter No", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LetterNo, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LetterNo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.From, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.From, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.From, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.User, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.User, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.User, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("Type", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.DropDownList("Department", (SelectList)ViewBag.departmentlist, string.Empty, new { @class = "form-control selectpicker", data_live_search = "true", data_show_subtext = "false", @onchange = "CallChangefunc(this.value)" })
+                    @Html.ValidationMessageFor(model => model.Department, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("Item Description", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ItemDescription, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ItemDescription, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("Deno", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-4">
+                    @Html.DropDownList("Deno", (SelectList)ViewBag.denolist, new { @class = "form-control selectpicker", data_live_search = "true", data_show_subtext = "true" })
+                    @Html.ValidationMessageFor(model => model.Deno, "", new { @class = "text-danger" })
+                </div>
+            </div>         
+            <div class="form-group">
+                @Html.Label("Reference", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input class="btn btn-default" type="file" title="search image" id="fileITReference" name="fileITReference" onchange="show3(this)" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="SAVE" id="btnITSave" name="btnITSave" class="btn btn-default" />
+                </div>
+            </div>
+        </fieldset>
+        <fieldset id="CSTSection">
+            <legend>CST Section </legend>
+        </fieldset>
+        <fieldset id="LPSection">
+            <legend>LP Section </legend>
+
+
+         </fieldset>
+        <fieldset id="CRSection">
+            <legend>CR Section </legend>
+
+
+         </fieldset>
+        <fieldset id="CINSSection">
+            <legend>CINS/ACINS Section </legend>
+
+
+         </fieldset>
+        <fieldset id="BillSection">
+            <legend>Bill Section </legend>
+
+
+         </fieldset>
+
+</div>
+}
+
+
+

@@ -1,0 +1,114 @@
+﻿@model BSDKhulna.Models.SuplierUploadModels
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SuplierUploadModels</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LetterID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LetterID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplierID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplierID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupplierContact)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupplierContact)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Deno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Deno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuoteDocURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuoteDocURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Other1DocURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Other1DocURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Other2DocURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Other2DocURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Other3DocURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Other3DocURL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Other4DocURL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Other4DocURL)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

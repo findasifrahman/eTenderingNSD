@@ -1,0 +1,45 @@
+﻿@model IEnumerable<BSDKhulna.Models.GeneralNoticeModels>
+
+@{
+    ViewBag.Title = "GeneralNoticeFront";
+}
+
+<h3 style="font-weight:bold;color:darkblue;text-align:center">General Notice</h3>
+
+@{ var i = 0;}
+<fieldset>
+    <legend style="font-family:Arial, Helvetica, sans-serif;font-weight:bold;color:firebrick">General Notice </legend>
+
+    <table class="table table-bordered" >
+        <tr>
+            <th style="font-family:Arial, Helvetica, sans-serif;color:darkblue">
+                Serial No
+            </th>
+            <th style="font-family:Arial, Helvetica, sans-serif;color:darkblue">
+                @Html.DisplayName("Description Of Notice")
+            </th>
+            <th style=";color:darkblue">
+                Download
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @{ i++;} @i
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DescriptionOfNotice)
+                </td>
+                @if (item.NoticeDownloadUrl != null)
+                {
+                    <td>
+                        <a href="@Url.Content(item.NoticeDownloadUrl)" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-pdf-o" style="color:darkred" aria-hidden="true"></i> </a>
+                    </td>
+                }
+            </tr>
+        }
+
+    </table>
+</fieldset>

@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - NSD Khulna</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        .scroll-left {
+                 height: 25px;	
+                 overflow: hidden;
+                 position: relative;
+         }
+        .scroll-left p {
+                 position: absolute;
+                 width: 100%;
+                 height: 100%;
+                 margin: 0;
+                 line-height: 25px;
+                 text-align: center;
+                 /* Starting position */
+                 -moz-transform:translateX(100%);
+                 -webkit-transform:translateX(100%);	
+                 transform:translateX(100%);
+                 /* Apply animation to this element */	
+                 -moz-animation: scroll-left 30s linear infinite;
+                 -webkit-animation: scroll-left 30s linear infinite;
+                 animation: scroll-left 30s linear infinite;
+          }
+                /* Move it (define the animation) */
+            @@-moz-keyframes scroll-left {
+                0%   { -moz-transform: translateX(100%); }
+                100% { -moz-transform: translateX(-100%); }
+            }
+             @@-webkit-keyframes scroll-left {
+                 0%   { -webkit-transform: translateX(100%); }
+                 100% { -webkit-transform: translateX(-100%); }
+             }
+             @@keyframes scroll-left {
+                 0%   { 
+                 -moz-transform: translateX(100%); /* Browser bug fix */
+                 -webkit-transform: translateX(100%); /* Browser bug fix */
+                 transform: translateX(100%); 		
+             }
+                 100% { 
+                 -moz-transform: translateX(-100%); /* Browser bug fix */
+                 -webkit-transform: translateX(-100%); /* Browser bug fix */
+                 transform: translateX(-100%); 
+            }
+        }
+
+        fieldset {
+           border: solid 1px #DDD !important;
+            padding: 0 10px 10px 10px;
+            border-bottom: none;        
+        }
+        legend {
+            width: auto !important;
+            border: none;
+            font-size: 14px;
+        }
+        .navbar-nav > li > a {padding-top:10px !important; padding-bottom:10px !important;}
+        .navbar-brand {
+          padding: 5px 10px;
+          height: 26px;
+          line-height: 26px;
+          color:whitesmoke;
+          font-weight:bold;
+        }
+        .navbar {min-height:42px !important}
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <br />
+    <div class="row container">
+        <div class="col-md-2 col-lg-2">
+            <img src="~/images/heading.png" class="img-fluid" height="80" max-width="100%" alt="Cinque Terre" />
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <img src="~/images/first.jpg" class="img-fluid" height="147" max-width="100%" style="background-size:cover" alt="Cinque Terre" />
+        </div>
+        <div class="col-lg-4 col-md-4">
+
+            <img src="~/images/first.jpg" class="img-fluid" height="147" max-width="95%" style="background-size:cover" alt="Cinque Terre" />
+        </div>
+    </div>
+
+
+    <div class="navbar  navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("NSD Khulna", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" ,@style = "color:#6fddcc"})
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Procurement and Tender", "ProcurementFrontPage", "ProcurementAndTenderModels")</li>
+                    <li>@Html.ActionLink("General Notice", "GeneralNoticeFront", "GeneralNoticeModels")</li>
+                    <li>@Html.ActionLink("Enlisted Supplier", "ViewSupplier", "SupplierModels")</li>
+                    <li>@Html.ActionLink("Schedule", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Contact NSD Khulna", "ViewContact", "ContactModels")</li>
+                </ul>
+                @Html.Partial("_LoginPartial") 
+            </div>
+        </div>
+    </div>
+    <div class="body-content">
+        <div class="scroll-left" style="color:orangered;font-weight:bolder;font-family:Tahoma;font-size:medium">
+            <p>@ViewBag.welcome</p>
+        </div>
+
+        @RenderBody()
+        <hr />
+        <footer style="text-align:center">
+
+            <p>
+                <a style="font-family:Verdana;font-size:11px;color:darkblue" href="/home/Index">Home</a> | <a style="color:darkblue;font-family:Verdana;font-size:11px" href="/GeneralNoticeModels/GeneralNoticeFront">Notice</a> | <a style="color:darkblue;font-family:Verdana;font-size:11px" href="/ContactModels/ViewContact">Contact </a> | <a style="color:darkblue;font-family:Verdana;font-size:11px" href="https://www.navy.mil.bd/index.php">Bangladesh Navy</a>
+            </p>
+            <p style="font-family:Verdana;font-size:11px">&copy; @DateTime.Now.Year - NSD Khulna. All Right Reserved</p>
+            <p style="font-family:Verdana;font-size:11px;color:green">Developed By:  Intricate Lab</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <!-- Latest compiled and minified CSS -->
+
+
+    <style>
+        fieldset.scheduler-border {
+            border: 1px groove #ddd !important;
+            padding: 0 1.4em 1.4em 1.4em !important;
+            margin: 0 0 1.5em 0 !important;
+            -webkit-box-shadow: 0px 0px 0px 0px #000;
+            box-shadow: 0px 0px 0px 0px #000;
+        }
+
+
+        legend.scheduler-border {
+            width: inherit; /* Or auto */
+            padding: 0 10px; /* To give a bit of padding on the left and right */
+            border-bottom: none;
+        }
+    </style>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

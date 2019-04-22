@@ -1,0 +1,539 @@
+﻿@model PagedList.IPagedList<BSDKhulna.Models.ProcurementAndTenderModels>
+@using PagedList.Mvc;
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Procurement Index";
+}
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    #myInput {
+        background-image: url('/css/searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+    }
+
+    #myTable {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ddd;
+        font-size: 18px;
+    }
+
+        #myTable th, #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+        #myTable tr.header, #myTable tr:hover {
+            background-color: #f1f1f1;
+        }
+</style>
+
+@section Scripts{
+    <script>
+        $(document).ready(function(){
+            $('#myTable').dataTable();
+        });
+
+        function myFunction() {
+            // Declare variables
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+                } else {
+                tr[i].style.display = "none";
+                }
+            }
+            }
+        }
+    </script>
+    <script type="text/javascript">
+            
+    </script>
+
+}
+
+
+<br/>
+
+
+<h3 style="text-align:center;color:darkblue;font-family:Tahoma;font-style:normal;font-weight:bold">All Tender List
+    @if (User.IsInRole("IT"))
+    { <b>IT Section</b> }
+    @if (User.IsInRole("CST"))
+    { <b>CST Section</b> }
+    @if (User.IsInRole("LP"))
+    { <b>LP Section</b> }
+    @if (User.IsInRole("CR"))
+    { <b>CR Section</b> }
+    @if (User.IsInRole("CINS"))
+    { <b>CINS/ACINS Section</b> }
+    @if (User.IsInRole("BILL"))
+    { <b>BILL Section</b> }
+    </h3>
+
+<fieldset>
+    <legend>Search</legend>
+    <div class="row">
+
+        <div class="col-md-9">
+            @using (Html.BeginForm("IndexByDate", "ProcurementAndTenderModels", FormMethod.Get))
+            {
+                <div class="form-horizontal text-center">
+                    <div class="row">
+                        <div class="col-md-3">
+                            @Html.Label("From", null, htmlAttributes: new { @class = "col-md-3 col-xs-3 control-label" })
+                            <div class="col-xs-1">
+                                @Html.TextBox("dt1", DateTime.Now.ToString("yyyy-MM-dd"), new { @class = "col-md-2 col-xs-1 form-control control-label", @type = "date", @style = "width:150px" })
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            @Html.Label("To", null, htmlAttributes: new { @class = "control-label col-md-1 col-xs-1" })
+                            <div class="col-xs-1">
+                                @Html.TextBox("dt2", DateTime.Now.ToString("yyyy-MM-dd"), new { @class = "col-md-2 col-xs-1 form-control control-label", @type = "date", @style = "width:150px" })
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="col-md-2 col-lg-2 col-xs-2 col-md-offset-1">
+                                <input type="submit" name="command" value="Search By Date" class="btn btn-success" width="250" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="col-md-3">
+            <input type="text" id="myInput" class="form-control" onkeyup="myFunction()" placeholder="Fast search in page.." title="Quick Search in page">
+        </div>
+    </div>
+</fieldset>
+
+<br/>
+@using (Html.BeginForm("Index", "ProcurementAndTenderModels", FormMethod.Get))
+{
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-4 col-xs-6">
+                <div class="input-group">
+                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "col-md-1 col-xs-1 form-control control-label" })
+                    <span class="input-group-addon"><i class=" glyphicon glyphicon-search"></i></span>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 col-xs-4">
+                <input type="submit" value="Search By Letter No or Tender No" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+
+}
+
+<table id="myTable" style="font-size:small;font-family:'Times New Roman', Times, serif" class="myTable table-bordered">
+    <tr>
+        @if (User.IsInRole("IT") || User.IsInRole("Admin"))
+        {
+
+            <th>
+                @Html.ActionLink("Letter No", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("From", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Department", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("User", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Quantity", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Date", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Deno", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th></th>
+        }
+        @if (User.IsInRole("CST"))
+        {
+            <th>
+                @Html.ActionLink("Letter No", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Tender No", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Opening Date", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Remarks", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Pages", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Price", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("CST Action", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Tender New", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Type Of Tender", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th></th>
+        }
+        @if (User.IsInRole("LP"))
+        {
+            <th>
+                @Html.ActionLink("Letter No", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Approval Letter No", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Date", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Description Of Items", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Purchase Order No", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Order Date", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Last Date Of Supply", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Name Of The Supplier", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Place Of Delivery", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th></th>
+        }
+        @if (User.IsInRole("CR"))
+        {
+            <th>
+                @Html.ActionLink("Letter No", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.ActionLink("Purchase Order No", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.DisplayName("CR No")
+            </th>
+            <th>
+                @Html.DisplayName("CR Date")
+            </th>
+            <th>
+                @Html.DisplayName("D44BNo")
+            </th>
+            <th>
+                @Html.DisplayName("D44B RecievingDate")
+            </th>
+            <th>
+                @Html.DisplayName("Requisition No")
+            </th>
+            <th>
+                @Html.DisplayName("Group")
+            </th>
+            <th></th>
+        }
+        @if (User.IsInRole("CINS"))
+        {
+            <th>
+                @Html.ActionLink("Letter No", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+            <th>
+                @Html.DisplayName("Purchase Order No")
+            </th>
+            <th>
+                @Html.DisplayName("CR No")
+            </th>
+            <th>
+                @Html.DisplayName("Date Of Recieving")
+            </th>
+            <th>
+                @Html.DisplayName("Recieving Quantity")
+            </th>
+            <th>
+                @Html.DisplayName("Deno")
+            </th>
+            <th>
+                @Html.DisplayName("Disposal")
+            </th>
+            <th>
+                @Html.DisplayName("Remarks")
+            </th>
+            <th></th>
+        }
+        @if (User.IsInRole("BILL"))
+        {
+            <th>
+                @Html.ActionLink("Letter No", "Index", new { sortOrder = ViewBag.IDSortParm, currentFilter = ViewBag.CurrentFilter })
+            </th>
+
+            <th>
+                @Html.DisplayName("Purchase Order No")
+            </th>
+            <th>
+                @Html.DisplayName("CR No")
+            </th>
+            <th>
+                @Html.DisplayName("Financial Code")
+            </th>
+            <th>
+                @Html.DisplayName("Bill Recieving Date")
+            </th>
+            <th>
+                @Html.DisplayName("Bill Forwarding Place")
+            </th>
+            <th>
+                @Html.DisplayName("Bill Forwarding Date")
+            </th>
+            <th>
+                @Html.DisplayName("Total Amount")
+            </th>
+            <th>
+                @Html.DisplayName("BF & FC")
+            </th>
+            <th></th>
+        }
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+    @if (User.IsInRole("IT") || User.IsInRole("Admin"))
+    {
+        <td>
+            @Html.DisplayFor(modelItem => item.LetterNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.From)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ITDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Deno)
+        </td>
+
+                <td>
+                    <button class="btn-info" onclick="location.href='@Url.Action("Edit", "ProcurementAndTenderModels", new { id = item.ID })';return false;">Edit</button>
+                    <button class="btn-info" onclick="location.href='@Url.Action("Delete", "ProcurementAndTenderModels", new { id = item.ID })';return false;">Delete</button>
+                    <button class="btn-info" onclick="location.href='@Url.Action("Details", "ProcurementAndTenderModels", new { id = item.ID })';return false;">Details</button>
+                    <button class="btn-info" onclick="location.href='@Url.Action("ViewUploads", "SuplierUploadModels", new { id = item.ID })';return false;">Supplier Uploads</button>
+                </td>
+        }
+        @if (User.IsInRole("CST"))
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.LetterNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenderNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OpeningDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remarks)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfPages)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.CSTAction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenderNew)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeOfTender)
+            </td>
+            <td>
+                <button class="btn-info" onclick="location.href='@Url.Action("EditCST", "ProcurementAndTenderModels", new { id = item.ID })';return false;">Edit</button>
+                <button class="btn-info" onclick="location.href='@Url.Action("Details", "ProcurementAndTenderModels", new { id = item.ID })';return false;">Details</button>
+
+            </td>
+        }
+        @if (User.IsInRole("LP"))
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.LetterNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApprovalLetterNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LPDate)
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.DescriptionOfItems)
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseOrderNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastDateOfSupply)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameOfTheSupplier)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlaceOfDelivery)
+            </td>
+            <td>
+                <button class="btn-info" onclick="location.href='@Url.Action("EditLP", "ProcurementAndTenderModels", new { id = item.ID })';return false;">Edit</button>
+                <button class="btn-info" onclick="location.href='@Url.Action("Details", "ProcurementAndTenderModels", new { id = item.ID })';return false;">View</button>
+            </td>
+        }
+        @if (User.IsInRole("CR"))
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.LetterNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CRPurchaseOrderNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CRNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CRDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.D44BNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.D44BRecievingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequisitionNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.group)
+            </td>
+            <td>
+                <button class="btn-info" onclick="location.href='@Url.Action("EditCR", "ProcurementAndTenderModels", new { id = item.ID })';return false;">Edit</button>
+                <button class="btn-info" onclick="location.href='@Url.Action("Details", "ProcurementAndTenderModels", new { id = item.ID })';return false;">View</button>
+            </td>
+        }
+        @if (User.IsInRole("CINS"))
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.LetterNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CINSPurchaseOrderNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CINSCRNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CINSDateOfRecieving)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CINSRecievingQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CINSDeno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CINSDisposal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CINSRemarks)
+            </td>
+            <td>
+                <button class="btn-info" onclick="location.href='@Url.Action("EditCINS", "ProcurementAndTenderModels", new { id = item.ID })';return false;">Edit</button>
+                <button class="btn-info" onclick="location.href='@Url.Action("Details", "ProcurementAndTenderModels", new { id = item.ID })';return false;">View</button>
+            </td>
+        }
+        @if (User.IsInRole("BILL"))
+        {
+            <td>
+                @Html.DisplayFor(modelItem => item.LetterNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillPurchaseOrderNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillCRNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinancialCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillRecievingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillForwardingPlace)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillForwardingDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillTotalAmount)
+            </td>
+            <th>
+                @Html.DisplayFor(modelItem => item.BFFC)
+            </th>
+            <td>
+                <button class="btn-info" onclick="location.href='@Url.Action("EditBill", "ProcurementAndTenderModels", new { id = item.ID })';return false;">Edit</button>
+                <button class="btn-info" onclick="location.href='@Url.Action("Details", "ProcurementAndTenderModels", new { id = item.ID })';return false;">View</button>
+            </td>
+        }
+    </tr>
+}
+
+</table>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))

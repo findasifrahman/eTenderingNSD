@@ -1,0 +1,451 @@
+﻿@model BSDKhulna.Models.ProcurementAndTenderModels
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Details";
+}
+@section Scripts{
+    <script type="text/javascript">
+            function printDiv(divName) {
+                /*var printContents = document.getElementById(divName).innerHTML;
+                var originalContents = document.body.innerHTML;
+
+                document.body.innerHTML = printContents;
+
+                window.print();
+
+                document.body.innerHTML = originalContents;*/
+                window.print();
+            }
+    </script>
+}
+<h2 style="font-weight:bold;color:darkblue;text-align:center">NSD Khulna</h2>
+<h3 style="font-weight:bold;color:darkblue;text-align:center">Tender Details</h3>
+
+<fieldset id="printableArea">
+    <div>
+        <hr />
+        <fieldset id="ITSection">
+            <legend>IT & CST Section </legend>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.LetterNo)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.LetterNo)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.ITDate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ITDate)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.From)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.From)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.User)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.User)
+                </dd>
+                <dt>
+                    @Html.DisplayName("Type")
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Department)
+                </dd>
+                <dt>
+                    @Html.DisplayName("Description Of Item")
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.ItemDescription)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Quantity)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Quantity)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Deno)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Deno)
+                </dd>
+
+                @if (Model.ITReferenceURL != null)
+            {
+                    <dt>
+                        @Html.DisplayName("Reference")
+                    </dt>
+                    <dd>
+                        <a href="@Url.Content(Model.ITReferenceURL)" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-pdf-o fa-2x" style="color:darkred" aria-hidden="true"></i> </a>
+                    </dd>
+                }
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TenderNo)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.TenderNo)
+                </dd>
+                <dt>
+                    @Html.DisplayName("Date")
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.CSTDate)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.OpeningDate)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.OpeningDate)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Remarks)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.Remarks)
+                </dd>
+                @if (Model.NoticeURL != null)
+            {
+                    <dt>
+                        @Html.DisplayName("Tender Notice")
+                    </dt>
+                    <dd>
+                        <a href="@Url.Content(Model.NoticeURL)" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-pdf-o fa-2x" style="color:darkred" aria-hidden="true"></i> </a>
+                    </dd>
+                }
+                @if (Model.SpecURL != null)
+            {
+                    <dt>
+                        @Html.DisplayName("Tender Specification")
+                    </dt>
+                    <dd>
+                        <a href="@Url.Content(Model.SpecURL)" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-pdf-o fa-2x" style="color:darkred" aria-hidden="true"></i> </a>
+                    </dd>
+                }
+                <dt>
+                    @Html.DisplayNameFor(model => model.NumberOfPages)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.NumberOfPages)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.price)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.price)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.CSTForwardedTo)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.CSTForwardedTo)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.CSTAction)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.CSTAction)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.TenderNew)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.TenderNew)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.TypeOfTender)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.TypeOfTender)
+                </dd>
+            </dl>
+        </fieldset>
+        @if (Model.ApprovalLetterNo != null && Model.PurchaseOrderNo != null)
+        {
+            <fieldset id="ITSection">
+                <legend>LP Section </legend>
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayName("Approval Letter No")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ApprovalLetterNo)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Date")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.LPDate)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Purchase Type")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.PurchaseType)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Description Of Items")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.DescriptionOfItems)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Purchase Order No")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.PurchaseOrderNo)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Order Date")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.OrderDate)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Quantity")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.LPQuantity)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Amount")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.LPAmount)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Deno")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.lpDeno)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Days")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Days)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Last Date Of Supply")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.LastDateOfSupply)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Name Of The Supplier")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.NameOfTheSupplier)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Place Of Delivery")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.PlaceOfDelivery)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Time Extention Upto")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.TimeExtentionUpto)
+                    </dd>
+                    @if (Model.LPReferenceURL != null)
+                {
+                        <dt>
+                            @Html.DisplayName("LP Reference")
+                        </dt>
+                        <dd>
+                            <a href="@Url.Content(Model.LPReferenceURL)" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-pdf-o fa-2x" style="color:darkred" aria-hidden="true"></i> </a>
+                        </dd>
+                    }
+                </dl>
+            </fieldset>
+        }
+        @if (Model.CRNo != null && Model.CRPurchaseOrderNo != null)
+        {
+            <fieldset id="ITSection">
+                <legend>CR Section </legend>
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayName("Purchase Order No")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.CRPurchaseOrderNo)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("CR No")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.CRNo)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Date")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.CRDate)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("D44BNo")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.D44BNo)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("D44B Recieving Date")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.D44BRecievingDate)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Recieving Quantity")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.RecievingQuantity)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("CR Deno")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.CRDeno)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Requisition No")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.RequisitionNo)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Group")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.group)
+                    </dd>
+                </dl>
+            </fieldset>
+        }
+        @if (Model.CINSPurchaseOrderNo != null && Model.CINSCRNo != null)
+        {
+            <fieldset id="ITSection">
+                <legend>CINS/ACINS Section </legend>
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayName("Purchase Order No")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.CINSPurchaseOrderNo)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("CR No")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.CINSCRNo)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Date Of Recieving")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.CINSDateOfRecieving)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Recieving Quantity")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.CINSRecievingQuantity)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Deno")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.CINSDeno)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("CINS/ACINS Disposal")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.CINSDisposal)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Remarks")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Remarks)
+                    </dd>
+                </dl>
+            </fieldset>
+        }
+        @if (Model.BillPurchaseOrderNo != null && Model.BillCRNo != null)
+        {
+            <fieldset id="ITSection">
+                <legend>Bill Section </legend>
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayName("Purchase Order No")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.BillPurchaseOrderNo)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("CR No")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.BillCRNo)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Financial Code")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.FinancialCode)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Bill Recieving Date")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.BillRecievingDate)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Bill Forwarding Date")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.BillForwardingDate)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Remarks")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Remarks)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Total amount")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.BillTotalAmount)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("BFFC")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.BFFC)
+                    </dd>
+                    <dt>
+                        @Html.DisplayName("Bill Type")
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.BillType)
+                    </dd>
+                </dl>
+            </fieldset>
+        }
+    </div>
+</fieldset>
+ <center>
+    <button class="btn btn-primary hidden-print" onclick="printDiv('printableArea')"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button>
+</center>
+

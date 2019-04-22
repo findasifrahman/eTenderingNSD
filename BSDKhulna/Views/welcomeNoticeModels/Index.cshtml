@@ -1,0 +1,29 @@
+﻿@model IEnumerable<BSDKhulna.Models.welcomeNoticeModels>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Index";
+}
+
+<h3 style="text-align:center">Notice </h3>
+<br /><br />
+<table class="table table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayName("Notice")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.WelcomeNotice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,230 @@
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - BSD Khulna</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        body {
+            padding-top: 50px;
+            padding-bottom: 20px;
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .body-content {
+            padding-left: 65px;
+            padding-right: 15px;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        fieldset {
+            border: solid 1px #DDD !important;
+            padding: 0 10px 10px 10px;
+            border-bottom: none;
+        }
+
+        legend {
+            width: auto !important;
+            border: none;
+            font-size: 14px;
+        }
+
+        .navbar-inverse {
+            background-color: Highlight;
+            border-color: #E7E7E7;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+                body {
+                    font-family: "Lato", sans-serif;
+                }
+
+                .sidenav {
+                    height: 100%;
+                    width: 0;
+                    position: fixed;
+                    z-index: 1;
+                    top: 0;
+                    left: 0;
+                    background-color: #111;
+                    overflow-x: hidden;
+                    transition: 0.5s;
+                    padding-top: 10px;
+                    margin-top:40px;
+                }
+
+                .sidenav a, .dropdown-btn {
+                    padding: 6px 8px 6px 16px;
+                    text-decoration: none;
+                    font-size: 20px;
+                    color: #818181;
+                    display: block;
+                    border: none;
+                    background: none;
+                    width:80%;
+                    text-align: left;
+                    cursor: pointer;
+                    outline: none;
+                }
+
+                .sidenav a:hover, .dropdown-btn:hover  {
+                    color: #f1f1f1;
+                }
+                /* Main content */
+                .main {
+                    margin-left: 200px; /* Same as the width of the sidenav */
+                    font-size: 20px; /* Increased text to enable scrolling */
+                    padding: 0px 10px;
+                }
+
+                /* Add an active class to the active dropdown button */
+                .active {
+                    background-color: green;
+                    color: white;
+                }
+                .dropdown-container {
+                    display: none;
+                    background-color: #262626;
+                    padding-left: 8px;
+                }
+
+                /* Optional: Style the caret down icon */
+                .fa-caret-down {
+                    float: right;
+                    padding-right: 8px;
+                }
+
+                .sidenav .closebtn {
+                    position: absolute;
+                    top: 0;
+                    right: 25px;
+                    font-size: 36px;
+                    margin-left: 50px;
+                }
+
+                @@media screen and (max-height: 450px) {
+                  .sidenav {padding-top: 15px;}
+                  .sidenav a {font-size: 18px;}
+                }
+    </style>
+
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:Highlight">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("BSD Khulna", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @style = "font-weight:bold;color:#ffffff" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Procurement and Tender", "ProcurementFrontPage", "ProcurementAndTenderModels")</li>
+                    <li>@Html.ActionLink("General Notice", "GeneralNoticeFront", "GeneralNoticeModels")</li>
+                    <li>@Html.ActionLink("Enlisted Supplier", "ViewSupplier", "SupplierModels")</li>
+                    <li>@Html.ActionLink("Schedule", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Contact BSD Khulna", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+
+        <button class="dropdown-btn">
+            Dropdown
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-container">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+        </div>
+
+        <a href="#">Contact</a>
+
+    </div>
+
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+    <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "250px";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+
+            var dropdown = document.getElementsByClassName("dropdown-btn");
+            var i;
+
+            for (i = 0; i < dropdown.length; i++) {
+                dropdown[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var dropdownContent = this.nextElementSibling;
+                    if (dropdownContent.style.display === "block") {
+                        dropdownContent.style.display = "none";
+                    } else {
+                        dropdownContent.style.display = "block";
+                    }
+                });
+            }
+    </script>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - BSD Khulna</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="~/Content/site2.css">
+    <style>
+        fieldset.scheduler-border {
+            border: 1px groove #ddd !important;
+            padding: 0 1.4em 1.4em 1.4em !important;
+            margin: 0 0 1.5em 0 !important;
+            -webkit-box-shadow: 0px 0px 0px 0px #000;
+            box-shadow: 0px 0px 0px 0px #000;
+        }
+
+
+        legend.scheduler-border {
+            width: inherit; /* Or auto */
+            padding: 0 10px; /* To give a bit of padding on the left and right */
+            border-bottom: none;
+        }
+    </style>
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+
+

@@ -1,0 +1,35 @@
+﻿@model BSDKhulna.Models.GeneralNoticeModels
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "Details";
+}
+
+<h3 style="font-weight:bold;color:turquoise;text-align:center">Details of General Notice</h3>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Description Of Notice")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DescriptionOfNotice)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Notice")
+        </dt>
+
+          @if (Model.NoticeDownloadUrl != null)
+          {
+                <dd>
+                    <a href="@Url.Content(Model.NoticeDownloadUrl)" target="_blank" rel="noopener noreferrer"><i class="fa fa-file-pdf-o" style="color:darkred" aria-hidden="true"></i> </a>
+                </dd>
+          }
+
+
+    </dl>
+</div>
+

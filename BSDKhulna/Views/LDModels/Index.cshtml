@@ -1,0 +1,146 @@
+﻿@model PagedList.IPagedList<BSDKhulna.Models.LDModels>
+@using PagedList.Mvc;
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "LDIndex";
+}
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    #myInput {
+        background-image: url('/css/searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        width: 100%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin-bottom: 12px;
+    }
+
+    #myTable {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ddd;
+        font-size: 18px;
+    }
+
+        #myTable th, #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+
+        #myTable tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+            #myTable tr.header, #myTable tr:hover {
+                background-color: #f1f1f1;
+            }
+</style>
+@section Scripts{
+    <script type="text/javascript">
+            function printDiv(divName) {
+                var x = document.getElementById("visi");
+                x.style.display = "none";
+                x = document.getElementsByClassName("visi2");
+                for (var i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                document.getElementById("print").style.display = "none";
+                window.print();
+
+            }
+    </script>
+}
+<h2 style="font-weight:bold;color:darkblue;text-align:center">NSD Khulna</h2>
+<h3 style="font-weight:bold;color:darkblue;text-align:center">Grand LD</h3>
+
+@using (Html.BeginForm("Index", "LDModels", FormMethod.Get))
+{
+    <div class="form-horizontal" id="visi">
+        <div class="form-group">
+            <div class="col-md-3 col-xs-6">
+                <div class="input-group">
+                    @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { @class = "col-md-2 col-xs-2 form-control control-label" })
+                    <span class="input-group-addon"><i class=" glyphicon glyphicon-search"></i></span>
+                </div>
+            </div>
+            <div class="col-md-1 col-lg-1 col-xs-1">
+                <input type="submit" value="Search By Purchase order" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+
+}
+
+
+<table id="myTable" style="font-size:small;font-family:'Times New Roman', Times, serif" class="myTable table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayName("Purchase Order No")
+        </th>
+        <th>
+            @Html.DisplayName("LD Reference No")
+        </th>
+        <th>
+            @Html.DisplayName("Date")
+        </th>
+        <th>
+            @Html.DisplayName("Company")
+        </th>
+        <th>
+            @Html.DisplayName("LD Amount")
+        </th>
+        <th>
+            @Html.DisplayName("Total Amount")
+        </th>
+        <th>
+            @Html.DisplayName("Percent")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PurchaseOrderNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LDReferenceNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PODate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LDAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalAmount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Percent)
+            </td>
+            <td class="visi2">
+                <button class="btn-info" onclick="location.href='@Url.Action("Edit", "LDModels", new { id = item.ID })';return false;">Edit</button>
+                <button class="btn-info" onclick="location.href='@Url.Action("Delete", "LDModels", new { id = item.ID })';return false;">Delete</button>
+                <button class="btn-info" onclick="location.href='@Url.Action("Details", "LDModels", new { id = item.ID })';return false;">Details</button>
+            </td>
+        </tr>
+    }
+
+</table>
+
+<center>
+    <button class="btn btn-primary hidden-print" id="print" onclick="printDiv('printableArea')"><span class="glyphicon glyphicon-print" aria-hidden="true"></span> Print</button>
+</center>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
